@@ -66,7 +66,7 @@
                                         <h1 class="trv-banner-1-text-large"
                                             data-swiper-parallax="-260" data-swiper-parallax-duration="1000"
                                             title="{!! $item->title ? $item->title : 'Vietnam' !!}">
-                                            {!! $item->title ? $item->title : 'Vietnam' !!} sssss
+                                            {!! $item->title ? $item->title : 'Vietnam' !!}
                                             {{-- <img loading="lazy" class="trv-btrfly" src="/frontend/images/butterfly.gif"
                                                 alt="image"> --}}
                                         </h1>
