@@ -165,15 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
            </div>
            <!-- BREADCRUMB ROW END -->                        
        </div>
-       <div class="trv-inr-bnr-cloud">            
-           <div class="marquee">
-               <img src="/frontend/images/inr-banner-cloud.png" alt="Image">
-           </div>
-       </div>
-       <div class="trv-inr-bnr-plane">
-           <div class="trv-inr-bnr-plane-bx"><img src="/frontend/images/airplane.png" alt="Image"></div>
-           
-       </div>
    </div>
    <!-- INNER PAGE BANNER END -->
 

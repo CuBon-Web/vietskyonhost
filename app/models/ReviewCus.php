@@ -19,6 +19,7 @@ class ReviewCus extends Model
                 $query->position = json_encode($request->position);
                 $query->content = json_encode($request->content);
                 $query->status = $request->status;
+                $query->show_on_home = (int) $request->input('show_on_home', 1);
                 $query->avatar = $request->avatar;
                 $query->save();
             }else{
@@ -27,6 +28,7 @@ class ReviewCus extends Model
                 $query->position = json_encode($request->position);
                 $query->content = json_encode($request->content);
                 $query->status = $request->status;
+                $query->show_on_home = (int) $request->input('show_on_home', 1);
                 $query->avatar = $request->avatar;
                 $query->save();
             }
@@ -37,6 +39,7 @@ class ReviewCus extends Model
                 $query->position = json_encode($request->position);
                 $query->content = json_encode($request->content);
                 $query->status = $request->status;
+                $query->show_on_home = (int) $request->input('show_on_home', 1);
                 $query->avatar = $request->avatar;
                 $query->save();
             

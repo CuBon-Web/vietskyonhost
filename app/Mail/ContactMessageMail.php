@@ -30,7 +30,15 @@ class ContactMessageMail extends Mailable
                 ->view('emails.contact_message_customer');
         }
 
-        return $this->subject('[' . config('app.name') . '] Liên hệ mới #' . $this->contact->id)
+        $mailable = $this->subject('[' . config('app.name') . '] Liên hệ mới #' . $this->contact->id)
             ->view('emails.contact_message_admin');
+
+        $replyEmail = trim((string) ($this->contact->email ?? ''));
+        if ($replyEmail !== '' && filter_var($replyEmail, FILTER_VALIDATE_EMAIL)) {
+            $replyName = trim((string) ($this->contact->name ?? ''));
+            $mailable->replyTo($replyEmail, $replyName !== '' ? $replyName : $replyEmail);
+        }
+
+        return $mailable;
     }
 }

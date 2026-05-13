@@ -25,6 +25,8 @@
         class="upload-add-card"
         :show-file-list="false"
         :auto-upload="true"
+        :multiple="true"
+        accept="image/*"
         :http-request="handleAddRequest"
       >
         <i class="el-icon-plus"></i>

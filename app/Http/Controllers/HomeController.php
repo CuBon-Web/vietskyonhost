@@ -21,10 +21,14 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $data['hotnews'] = Blog::where([
-            ['status','=',1]
-        ])->orderBy('id','DESC')->limit(6)->get(['id','title','slug','created_at','image','description']);
-        $data['ReviewCus'] = ReviewCus::where('status',1)->get();
+        $data['hotnews'] = Blog::where('status', 1)
+            ->where(function ($q) {
+                $q->where('home_status', 1)->orWhereNull('home_status');
+            })
+            ->orderBy('id', 'DESC')
+            ->limit(6)
+            ->get(['id', 'title', 'slug', 'created_at', 'image', 'description']);
+        $data['ReviewCus'] = ReviewCus::where('status', 1)->where('show_on_home', 1)->get();
         $data['servicecatehome'] = ServiceCate::where('status',1)->orderBy('id','ASC')->get()->map(function ($query) {
             $query->setRelation('services', $query->services);
             return $query;

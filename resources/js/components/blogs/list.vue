@@ -31,6 +31,7 @@
                   <vs-th>Danh mục</vs-th>
                   <vs-th>Danh mục con</vs-th>
                   <vs-th>Loại</vs-th>
+                  <vs-th>Trang chủ</vs-th>
                   <vs-th>Hành động</vs-th>
                 </template>
                 <template slot-scope="{data}">
@@ -43,6 +44,7 @@
                     <vs-td v-if="tr.type_news == 'tin-hot'">Tin Hot</vs-td>
                     <vs-td v-if="tr.type_news == 'tin-khuyen-mai'">Tin Khuyến Mãi</vs-td>
                     <vs-td v-if="tr.type_news == null">-----</vs-td>
+                    <vs-td>{{ tr.home_status === 0 || tr.home_status === '0' ? 'Không' : 'Có' }}</vs-td>
                     <vs-td >
                       <router-link :to="{name:'editBlog',params:{id:tr.id}}">
                         <vs-button

@@ -107,6 +107,13 @@
               </vs-select>
             </div>
             <div class="form-group">
+              <label>Hiển thị trang chủ</label>
+              <vs-select v-model="objData.home_status">
+                <vs-select-item value="1" text="Có" />
+                <vs-select-item value="0" text="Không" />
+              </vs-select>
+            </div>
+            <div class="form-group">
               <label>Danh mục</label>
               <vs-select
                 class="selectExample"
@@ -217,7 +224,7 @@ export default {
         author: "",
         category: "",
         type_news: "",
-        home_status: "",
+        home_status: 0,
         type_cate: "",
       },
     };

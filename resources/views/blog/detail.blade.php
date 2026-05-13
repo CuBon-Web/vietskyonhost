@@ -142,14 +142,20 @@
                               <div class="tw-sidebar-gallery">
                                   <ul>
                                     @foreach ($gallery as $item)
+                                      @php $__gimgs = $item->gallery_images; @endphp
+                                      @if(count($__gimgs))
                                       <li>
                                           <div class="tw-service-gallery-thumb">
-                                              <a class="elem" href="{{url($item->image)}}" title="Title 1" data-lcl-author="" data-lcl-thumb="{{url($item->image)}}">
-                                                  <img src="{{url($item->image)}}" alt="">
-                                                  <i class="fa fa-file-image"></i>     
+                                              <a class="elem" href="{{ url($__gimgs[0]) }}" title="{{ $item->name }}" data-lcl-author="" data-lcl-thumb="{{ url($__gimgs[0]) }}" data-lcl-group="sidebar-album-{{ $item->id }}">
+                                                  <img src="{{ url($__gimgs[0]) }}" alt="">
+                                                  <i class="fa fa-file-image"></i>
                                               </a>
+                                              @foreach(array_slice($__gimgs, 1) as $imgPath)
+                                              <a class="elem" href="{{ url($imgPath) }}" style="display:none;" title="{{ $item->name }}" data-lcl-author="" data-lcl-thumb="{{ url($imgPath) }}" data-lcl-group="sidebar-album-{{ $item->id }}"></a>
+                                              @endforeach
                                           </div>
                                       </li>
+                                      @endif
                                       @endforeach 
                                       
                                   </ul>

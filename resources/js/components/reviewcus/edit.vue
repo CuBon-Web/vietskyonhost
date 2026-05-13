@@ -83,6 +83,13 @@
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>
               </div>
+              <div class="form-group">
+                <label>Hiển thị trang chủ</label>
+                <vs-select v-model="objData.show_on_home">
+                  <vs-select-item value="1" text="Có" />
+                  <vs-select-item value="0" text="Không" />
+                </vs-select>
+              </div>
             </div>
           </div>
         </div>
@@ -137,6 +144,7 @@ export default {
           }
         ],
         status: 1,
+        show_on_home: 1,
         avatar: ""
       },
       lang:[]
@@ -234,6 +242,7 @@ export default {
                       }
                     ],
                     status: "",
+                    show_on_home: 1,
                     avatar: ""
                   }
         }else{
@@ -241,6 +250,9 @@ export default {
            this.objData.content = JSON.parse(response.data.content);
           this.objData.position = JSON.parse(response.data.position);
           this.objData.name = JSON.parse(response.data.name);
+          const sh = this.objData.show_on_home;
+          this.objData.show_on_home =
+            sh === undefined || sh === null || sh === '' ? 1 : Number(sh);
         }
       }).catch(error => {
         console.log(12);

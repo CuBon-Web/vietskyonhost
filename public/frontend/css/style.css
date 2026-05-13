@@ -13191,7 +13191,7 @@ select {
     overflow: hidden;
     min-width: 100px;
     width: 100px;
-    height: 131px;
+    height: 100%;
 }
 
 @media (max-width: 400px) {
@@ -13237,7 +13237,7 @@ select {
 
 .trv-blog-st1 .trv-post-info {
     background-color: #fff;
-    padding: 25px 20px;
+    padding: 28px 20px;
     border-radius: 15px;
     width: 100%;
 }
@@ -13250,7 +13250,7 @@ select {
     display: table;
     font-family: "Afacad", sans-serif;
     line-height: 1;
-    padding-bottom: 15px;
+    padding-bottom: 1px;
 }
 
 .trv-blog-st1 .trv-post-info .trv-post-title .post-title {

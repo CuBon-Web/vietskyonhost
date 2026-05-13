@@ -29,7 +29,7 @@ class BlogController extends Controller
                 'typeCate' => function ($query) {
                     $query->select('id','name','slug'); 
                 }
-            ])->orderBy('id','DESC')->get(['id','title','created_at','category','type_cate','type_news']);
+            ])->orderBy('id','DESC')->get(['id','title','created_at','category','type_cate','type_news','home_status']);
         }else{
             $data = Blog::where('title', 'LIKE', '%'.$keyword.'%')->orderBy('id','DESC')->get()->toArray();
         }

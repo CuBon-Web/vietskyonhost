@@ -105,6 +105,13 @@
                 <vs-select-item value="0" text="Ẩn" />
               </vs-select>
             </div>
+            <div class="form-group">
+              <label>Hiển thị trang chủ</label>
+              <vs-select v-model="objData.show_on_home">
+                <vs-select-item value="1" text="Có" />
+                <vs-select-item value="0" text="Không" />
+              </vs-select>
+            </div>
           </div>
         </div>
       </div>
@@ -157,6 +164,7 @@ export default {
           },
         ],
         status: 1,
+        show_on_home: 1,
         avatar: ""
       },
     };
@@ -213,13 +221,13 @@ export default {
         this.showLang.description = !this.showLang.description;
         this.lang.forEach((value, index) => {
           if (
-            !this.objData.description[index] &&
-            value.code != this.objData.description[0].lang_code
+            !this.objData.position[index] &&
+            value.code != this.objData.position[0].lang_code
           ) {
             var oj = {};
             oj.lang_code = value.code;
             oj.content = "";
-            this.objData.description.push(oj);
+            this.objData.position.push(oj);
           }
         });
       }

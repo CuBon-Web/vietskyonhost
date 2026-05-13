@@ -79,6 +79,13 @@
                     </vs-select>
               </div>
               <div class="form-group">
+                <label>Hiển thị trang chủ</label>
+                <vs-select v-model="objData.home_status">
+                  <vs-select-item value="1" text="Có" />
+                  <vs-select-item value="0" text="Không" />
+                </vs-select>
+              </div>
+              <div class="form-group">
                 <label>Danh muc</label>
                 <vs-select class="selectExample" v-model="objData.category" placeholder="Danh mục" @change="findCategoryType()">
                    <vs-select-item
@@ -112,7 +119,7 @@
                   />
                 </vs-select>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
               <label>Bài viết liên quan đến danh mục sản phẩm</label>
               <vs-select
                   class="selectExample"
@@ -130,7 +137,7 @@
                     :key="'f' + index"
                   />
                 </vs-select>
-            </div>
+            </div> -->
             </div>
           </div>
         </div>
@@ -189,9 +196,10 @@ export default {
         image: "",
         author: "",
         category: "",
-        home_status:0,
+        home_status: 0,
         type_cate:"",
-        type_news:""
+        type_news:"",
+        cate_product: 0,
       },
       lang:[]
     };
@@ -304,13 +312,20 @@ export default {
                     status: "",
                     image: "",
                     author: "",
-                    category: ""
+                    category: "",
+                    type_cate: "",
+                    type_news: "",
+                    cate_product: 0,
+                    home_status: 1,
                   }
         }else{
           this.objData = response.data;
            this.objData.content = JSON.parse(response.data.content);
           this.objData.description = JSON.parse(response.data.description);
           this.objData.title = JSON.parse(response.data.title);
+          const hs = this.objData.home_status;
+          this.objData.home_status =
+            hs === undefined || hs === null || hs === '' ? 1 : Number(hs);
         }
       }).catch(error => {
         console.log(12);

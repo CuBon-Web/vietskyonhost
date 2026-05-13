@@ -13,12 +13,14 @@
                 <template slot="thead">
                   <vs-th>Tiêu đề</vs-th>
                   <vs-th>Nội dung</vs-th>
+                  <vs-th>Trang chủ</vs-th>
                   <vs-th>Hành động</vs-th>
                 </template>
                 <template slot-scope="{data}">
                   <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                     <vs-td >{{JSON.parse(tr.name)[0].content}}</vs-td>
                     <vs-td >{{JSON.parse(tr.content)[0].content}}</vs-td>
+                    <vs-td >{{ tr.show_on_home == 1 ? 'Có' : 'Không' }}</vs-td>
                     <vs-td >
                       <router-link :to="{name:'editReviewCus',params:{id:tr.id}}">
                         <vs-button

@@ -41,7 +41,7 @@ class Blog extends Model
                 $query->cate_product = $request->cate_product;
                 $query->status = $request->status;
                 $query->type_news = $request->type_news;
-                $query->home_status = $request->home_status;
+                $query->home_status = (int) $request->input('home_status', 0);
                 $query->image = $request->image;
                 $query->slug = to_slug($request->title[0]['content']);
                 $query->author = Auth::user()->name;
@@ -57,7 +57,7 @@ class Blog extends Model
                 $query->cate_product = $request->cate_product;
                 $query->status = $request->status;
                 $query->type_news = $request->type_news;
-                $query->home_status = $request->home_status;
+                $query->home_status = (int) $request->input('home_status', 0);
                 $query->slug = to_slug($request->title[0]['content']);
                 $query->author = Auth::user()->name;
                 $query->save();
@@ -74,7 +74,7 @@ class Blog extends Model
                 $query->type_news = $request->type_news;
                 $query->cate_product = $request->cate_product;
                 $query->status = $request->status;
-                $query->home_status = $request->home_status;
+                $query->home_status = (int) $request->input('home_status', 0);
                 $query->slug = to_slug($request->title[0]['content']);
                 $query->author = Auth::user()->name;
                 $query->save();

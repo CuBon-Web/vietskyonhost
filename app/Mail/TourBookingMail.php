@@ -42,7 +42,15 @@ class TourBookingMail extends Mailable
                 ->view('emails.tour_booking_customer');
         }
 
-        return $this->subject('[Vietsky Travel] New Tour Booking Request #' . $this->bill->id)
+        $mailable = $this->subject('[Vietsky Travel] New Tour Booking Request #' . $this->bill->id)
             ->view('emails.tour_booking_admin');
+
+        $replyEmail = trim((string) ($this->bill->email ?? ''));
+        if ($replyEmail !== '' && filter_var($replyEmail, FILTER_VALIDATE_EMAIL)) {
+            $replyName = trim((string) ($this->bill->name ?? ''));
+            $mailable->replyTo($replyEmail, $replyName !== '' ? $replyName : $replyEmail);
+        }
+
+        return $mailable;
     }
 }
