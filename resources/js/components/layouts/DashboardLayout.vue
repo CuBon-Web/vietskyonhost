@@ -205,6 +205,10 @@ export default {
               name: "Quản lý đối tác",
               path: "/partner",
             },
+            {
+              name: "Quản lý text",
+              path: "/language/keyword",
+            },
           ],
         },
         // {

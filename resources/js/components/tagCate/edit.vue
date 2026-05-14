@@ -22,6 +22,13 @@
                   />
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputName1">Mô tả</label>
+                  <vs-textarea
+                    class="w-100"
+                    v-model="objData.description"
+                  />
+                </div>
+                <div class="form-group">
                   <label for="exampleInputName1">Trạng thái hiển thị menu</label>
                   <vs-select v-model="objData.status"
                   >
@@ -63,6 +70,7 @@ export default {
         language: this.$route.params.language,
         id:this.$route.params.id,
         name: "",
+        description: "",
         status: 1,
         cate_product_id:0,
       },

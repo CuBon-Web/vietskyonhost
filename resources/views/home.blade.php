@@ -224,9 +224,9 @@
             <div class="container">
                 <!-- TITLE START-->
                 <div class="section-head trv-head-title-wrap center-position">
-                    <h2 class="trv-head-title"><span class="site-text-yellow">Featured
-                        </span>Destinations</h2>
-                    <div class="trv-head-discription">Destinations worth exploring! Here are a few popular spots</div>
+                    <h2 class="trv-head-title"><span class="site-text-yellow">{{getLanguage('featured')}}
+                        </span>{{getLanguage('destinations')}}</h2>
+                    <div class="trv-head-discription">{{getLanguage('destinations_description')}}</div>
                     <div class="trv-head-title-image">
                         <img loading="lazy" src="/frontend/images/Title-Separator.png" alt="Image">
                     </div>
@@ -273,13 +273,13 @@
              <div class="trv-most-fav-tour-top">
                  <div class="trv-most-fav-tour-t-left">
                      <div class="section-head trv-head-title-wrap left-position with-bg-dark">
-                         <h2 class="trv-head-title"><span class="site-text-yellow">Most Favorite</span> Tour Places!</h2>
-                         <div class="trv-head-discription">Choosing a destination can be exciting but also a bit overwhelming with so many amazing places out there! Let's narrow it down a little. Are you dreaming of peaceful nature, buzzing cities, historical wonders, or relaxing beaches?</div>
+                         <h2 class="trv-head-title"><span class="site-text-yellow">{{getLanguage('most_favorite')}}</span> {{getLanguage('tour_places')}}!</h2>
+                         <div class="trv-head-discription">{{getLanguage('tour_places_description')}}</div>
                      </div>
                  </div>
                  <div class="trv-most-fav-title">
-                     <span>Explore </span> 
-                     Featured Tours
+                     <span>{{getLanguage('explore')}}</span> 
+                     {{getLanguage('featured_tours')}}
                  </div>
              </div>
 
@@ -316,6 +316,7 @@
              <!-- TITLE START-->
              <div class="section-head trv-head-title-wrap center-position">
                  <h2 class="trv-head-title"><span class="site-text-yellow"> {{($tagcate->name)}}</span> Tours!</h2>
+                 <div class="trv-head-discription">{{languageName($tagcate->description)}}</div>
                  <div class="trv-head-title-image">
                     <img loading="lazy" src="/frontend/images/Title-Separator.png" alt="Image">
                  </div>
@@ -394,8 +395,8 @@
             <div class="container">
                 <!-- TITLE START-->
                 <div class="section-head trv-head-title-wrap center-position">
-                    <h2 class="trv-head-title"> <span class="site-text-yellow">Our Client </span>Says!</h2>
-                    <div class="trv-head-discription">Destinations worth exploring! Here are a few popular spots</div>
+                    <h2 class="trv-head-title"> <span class="site-text-yellow">{{getLanguage('our_client')}}</span> {{getLanguage('says')}}!</h2>
+                    <div class="trv-head-discription">{{getLanguage('our_client_says_des')}}</div>
                     <div class="trv-head-title-image">
                         <img loading="lazy" src="/frontend/images/Title-Separator.png" alt="Image">
                     </div>
@@ -459,10 +460,8 @@
                 <div class="row trv-column-style-head">
                     <div class="col-xl-4 col-lg-6 col-md-12">
                         <div class="section-head trv-head-title-wrap left-position">
-                            <h2 class="trv-head-title">Explore<span class="site-text-yellow"> Latest News</span></h2>
-                            <div class="trv-head-discription">Maybe for a travel blog, wildlife site, or web development
-                                project here are a few sample templates you can use to simulate real-time news updates:
-                            </div>
+                            <h2 class="trv-head-title">{{getLanguage('explore')}}<span class="site-text-yellow"> {{getLanguage('latest_news')}}</span></h2>
+                            <div class="trv-head-discription">{{getLanguage('latest_news_des')}}</div>
                         </div>
                     </div>
                 </div>

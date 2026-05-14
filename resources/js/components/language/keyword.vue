@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title" >Từ khóa</h4>
-            <vs-button type="gradient" style="float:right;" @click="popupActivo=true">Thêm từ khóa</vs-button>
+            <!-- <vs-button type="gradient" style="float:right;" @click="popupActivo=true">Thêm từ khóa</vs-button> -->
             <p class="card-description">Thêm mới hoặc sửa từ khóa</p>
             <vs-button color="success" type="filled"  style="float:right;" @click="editLanguageStaticByLang">Lưu</vs-button>
             <vs-input icon="search" placeholder="Search" v-model="keyword" @keyup="searchKey" />
@@ -13,18 +13,17 @@
               <template slot="thead">
                 <vs-th>STT</vs-th>
                 <vs-th>Từ khóa</vs-th>
-                <vs-th v-for="(i, key) in list" :key="key">{{i.name}}</vs-th>
-                <vs-th>Action</vs-th>
+                <vs-th v-for="(i, key) in list" :key="key">Nội dung</vs-th>
               </template>
               <template slot-scope="{data}">
                 <vs-tr v-for="(item, index) in languageStatic" :key="item.info.languageKey">
                   <vs-td >{{index + 1}}</vs-td>
                   <vs-td >{{item.info.languageKey}}</vs-td>
                   <!-- <vs-td>{{item.info.languageDefaultValue}}</vs-td> -->
-                  <vs-td v-for="(jtem, index2) in list" :key="jtem.code" ><vs-input v-model="item.lang[jtem.code]" /></vs-td>
-                  <vs-td >
-                    <vs-button vs-type="gradient" size="lagre" color="red" icon="delete_forever" @click="confirmDestroy(tr.id)"></vs-button>
+                  <vs-td v-for="(jtem, index2) in list" :key="jtem.code" >
+                    <vs-textarea v-if="index != 0" v-model="item.lang[jtem.code]" />
                   </vs-td>
+                 
                 </vs-tr>
               </template>
             </vs-table>

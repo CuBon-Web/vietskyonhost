@@ -36,6 +36,7 @@ class TagCate extends Model
                 $query->cate_product_slug = '';
                 $query->status = $request->status;
                 $query->status_filter = $request->status_filter;
+                $query->description = $request->description;
                 $query->save();
             }else{
                 $query = new TagCate();
@@ -45,6 +46,7 @@ class TagCate extends Model
                 $query->cate_product_slug = '';
                 $query->status = $request->status;
                 $query->status_filter = $request->status_filter;
+                $query->description = $request->description;
                 $query->save();
             }
             
@@ -56,6 +58,7 @@ class TagCate extends Model
             $query->cate_product_slug = '';
             $query->status = $request->status;
             $query->status_filter = $request->status_filter;
+            $query->description = $request->description;
             $query->save();
             
         }
